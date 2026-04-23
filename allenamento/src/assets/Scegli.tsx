@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export function Home() {
   const navigate = useNavigate();
 
-  const sizes = [3, 4, 5, 6];
+  const sizes = [3, 4, 5, 6, 7, 8, 9, 10, 12];
 
   return (
     <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center bg-black text-white">
