@@ -1,0 +1,12 @@
+:root {
+  --bg-main: #1b1b1b;
+  --text-main: #fff;
+  --bg-card: #06aa06;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
