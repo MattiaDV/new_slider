@@ -9,6 +9,7 @@ type Tile = {
 export function Game() {
     const navigate = useNavigate();
     const { size } = useParams();
+    const [mosse, setMosse] = useState(0);
 
     function returnHome() {
         navigate("/");
@@ -87,6 +88,7 @@ export function Game() {
     const [output, setOutput] = useState("Sfida in corso!");
 
     function handleClick(index: number) {
+        setMosse(prev => prev + 1);
         setQuad((prev) => {
             const newArr = [...prev];
 
@@ -111,7 +113,7 @@ export function Game() {
             ];
 
             if (isWin(newArr)) {
-                setOutput("Hai vinto!");
+                setOutput("Hai vinto in " + (mosse + 1) + " mosse!");
             }
 
             return newArr;
@@ -148,6 +150,10 @@ export function Game() {
 
             <h1 className="w-[200px] text-center mt-4 px-4 py-2 rounded-lg bg-white/10 text-white backdrop-blur">
                 {output}
+            </h1>
+
+            <h1 className="w-[200px] text-center mt-4 px-4 py-2 rounded-lg bg-white/10 text-white backdrop-blur">
+                Mosse: {mosse}
             </h1>
             <button className="w-[200px] text-center mt-4 px-4 py-2 rounded-lg bg-white/10 text-white backdrop-blur" onClick={() => returnHome()}>Home</button>
         </div>
