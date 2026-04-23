@@ -88,7 +88,6 @@ export function Game() {
     const [output, setOutput] = useState("Sfida in corso!");
 
     function handleClick(index: number) {
-        setMosse(prev => prev + 1);
         setQuad((prev) => {
             const newArr = [...prev];
 
@@ -101,7 +100,7 @@ export function Game() {
             if (
                 Math.abs(index - emptyIndex) === 1 &&
                 Math.floor(index / n) !== Math.floor(emptyIndex / n)
-            ) {
+            ) {    
                 return prev;
             }
 
@@ -111,6 +110,7 @@ export function Game() {
                 newArr[emptyIndex],
                 newArr[index],
             ];
+            setMosse(prev => prev + 1);
 
             if (isWin(newArr)) {
                 setOutput("Hai vinto in " + (mosse + 1) + " mosse!");
